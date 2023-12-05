@@ -18,6 +18,8 @@ function A=coare35vn_modifs_sauvage_etal_2023(u,zu,t,zt,rh,zq,P,ts,Rs,Rl,lat,zi,
 %
 % c. If cp is a mean period but theta is not provided, it will use the revised COARE3.5 wave based formulation #2 (Sauvage et al. 2023) which uses the mean wave age.
 % 
+%%%  use_mean = yes (else use_mean = no)
+%
 %%%  new roughness formulation:  zo_new=sigH.*Ad_new.*(usr./cp).^Bd_new;
 %%%  Ad_new=0.39  
 %%%  Bd_new=2.6
