@@ -29,3 +29,8 @@ d. If cp is a mean period, and theta is provided, this will abort. In the curren
 <ins>Contact:</ins> César Sauvage at csauvage@whoi.edu  
 <ins>Website:</ins>  https://cesarsauvage.github.io/  
 <ins>GitHub:</ins>  https://github.com/cesarsauvage  
+
+
+<ins>References:</ins>  
+Porchetta, S., Temel, O., Muñoz-Esparza, D., Reuder, J., Monbaliu, J., van Beeck, J., and van Lipzig, N.: A new roughness length parameterization accounting for wind–wave (mis)alignment, Atmos. Chem. Phys., 19, 6681–6700, https://doi.org/10.5194/acp-19-6681-2019, 2019.  
+Edson, J. B., Jampana, V., Weller, R. A., Bigorre, S. P., Plueddemann, A. J., Fairall, C. W., Miller, S. D., Mahrt, L., Vickers, D., & Hersbach, H. (2013). On the Exchange of Momentum over the Open Ocean. Journal of Physical Oceanography, 43(8), 1589-1610. https://doi.org/10.1175/JPO-D-12-0173.1  
