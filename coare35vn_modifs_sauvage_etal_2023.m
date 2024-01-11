@@ -13,8 +13,8 @@ function A=coare35vn_modifs_sauvage_etal_2023(u,zu,t,zt,rh,zq,P,ts,Rs,Rl,lat,zi,
 %%%  Ad_new=0.091.*cos(0.45.*theta);  
 %%%  Bd_new=2.*cos(-0.32.*theta);
 %
-%%%  with theta (θ), the angle between the wind direction and the wave direction which varies between 0° and 180°.
-%%%  i.e., if θ = 0°, wind and waves are perfectly aligned, whereas θ = 180° means wind and waves are opposed. 
+%%% with theta (θ) in radians, the angle between the wind direction and the wave direction which varies between 0 and π.
+%%% i.e., if θ = 0, wind and waves are perfectly aligned, whereas θ = π means wind and waves are opposed.
 %
 % c. If cp is a mean period but theta is not provided, it will use the revised COARE3.5 wave based formulation #2 (Sauvage et al. 2023) which uses the mean wave age.
 % 
