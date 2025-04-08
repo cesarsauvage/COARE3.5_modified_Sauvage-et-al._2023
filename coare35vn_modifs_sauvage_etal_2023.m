@@ -3,10 +3,15 @@ function A=coare35vn_modifs_sauvage_etal_2023(u,zu,t,zt,rh,zq,P,ts,Rs,Rl,lat,zi,
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% Sauvage et al. 2023 Modifications 
-% Instruction: 
-% a. If cp is a peak wave period and theta is not provided, this is identical to the original COARE3.5 wave based formulations (Edson et al. 2013).
+% Instructions:
+%
+% a. If wave parameters (cp,sigH ,theta) are not provided, this is identical to the original COARE3.5 wind speed-dependent formulation, Eq. 12,13 in Edson et al. 2013 (see also corrigendum): z0 = alpha (u*^2/g) with alpha = 0.0017 U10N -0.005
+%
+% b. If cp is provided but theta and sigH are not provided, this is identical to the original COARE3.5 wave based formulation, Eq. 15 in Edson et al. 2013: zo = 0.114(u*/cp)^0.622
+%
+% c. If cp and sigH are provided but theta is not provided, this is identical to the original COARE3.5 wave based formulations, Eq. 19 in Edson et al. 2013: zo = sigH0.09(u*/cp)^2
 % 
-% b. If cp is a peak period but theta is provided, then it will use the revised COARE3.5 wave based formulation #1 (Sauvage et al. 2023), which accounts for the wind wave misalignment.
+% d. If cp, sigH and theta are provided, then it will use the revised COARE3.5 wave based formulation, Eq. 13 in Sauvage et al. 2023, which accounts for the wind wave misalignment:
 %
 %%%  new roughness formulation:  zo_new=sigH.*Ad_new.*(usr./cp).^Bd_new;
 %%%  where new coefficients are used, notably based on findings from Porchetta et al. 2019:
@@ -16,7 +21,7 @@ function A=coare35vn_modifs_sauvage_etal_2023(u,zu,t,zt,rh,zq,P,ts,Rs,Rl,lat,zi,
 %%% with theta (θ) in radians, the angle between the wind direction and the wave direction which varies between 0 and π.
 %%% i.e., if θ = 0, wind and waves are perfectly aligned, whereas θ = π means wind and waves are opposed.
 %
-% c. If cp is a mean period but theta is not provided, it will use the revised COARE3.5 wave based formulation #2 (Sauvage et al. 2023) which uses the mean wave age.
+% e. If cm (mean wave speed) and sigH are provided but theta is not provided, it will use the revised COARE3.5 wave based formulation, Eq. 12 in Sauvage et al. 2023 which uses the mean wave age:
 % 
 %%%  use_mean = yes (else use_mean = no)
 %
@@ -25,9 +30,9 @@ function A=coare35vn_modifs_sauvage_etal_2023(u,zu,t,zt,rh,zq,P,ts,Rs,Rl,lat,zi,
 %%%  Bd_new=2.6
 %
 %%%  These coefficients have been tuned using the COARE3.5 set of observations. 
-%%%  The mean wave age used as input here uses the mean period, Tm. Tm is based on the zero-crossing period, as it is the one used to describe the mean period in the observation.
+%%%  The mean wave speed used as input here uses the mean period, Tm. Tm is based on the zero-crossing period, as it is the one used to describe the mean period in the observation.
 %
-% d. If cp is a mean period, and theta is provided, this will abort. In the current implementation, our study shows that it results in overfitting.
+% f. If cm and theta are provided, this will abort. In the current implementation, our study shows that it results in overfitting.
 %
 %%%
 % Citation:  Sauvage, C., Seo, H., Clayson, C. A., & Edson, J. B. (2023). Improving wave-based air-sea momentum flux parameterization in mixed seas. Journal of Geophysical Research: Oceans, 128, e2022JC019277. https://doi.org/10.1029/2022JC019277 
