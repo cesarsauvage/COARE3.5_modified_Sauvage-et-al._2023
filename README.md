@@ -5,9 +5,9 @@
 
 **a.** If wave parameters ($c_p,H_s ,\theta$) are not provided, this is identical to the original COARE3.5 wind speed-dependent formulation, Eq. 12,13 in Edson et al. 2013 (see also corrigendum): $z_0 = \alpha (u_\*^2/g)$ with $\alpha = 0.0017 U_{10N} -0.005$
 
-**b.** If $c_p$ is provided but $\theta$ and $H_s$  are not provided, this is identical to the original COARE3.5 wave based formulation (Eq. 15 in Edson et al. 2013: $z_o = 0.114(u_\*/c_p)^{0.622}$
+**b.** If $c_p$ is provided but $\theta$ and $H_s$  are not provided, this is identical to the original COARE3.5 wave based formulation, Eq. 15 in Edson et al. 2013: $z_o = 0.114(u_\*/c_p)^{0.622}$
 
-**c.** If $c_p$ and $H_s$  are provided but $\theta$ is not provided, this is identical to the original COARE3.5 wave based formulation (Eq. 19 in Edson et al. 2013: $z_o = H_s0.09(u_\*/c_p)^2$    
+**c.** If $c_p$ and $H_s$  are provided but $\theta$ is not provided, this is identical to the original COARE3.5 wave based formulation, Eq. 19 in Edson et al. 2013: $z_o = H_s0.09(u_\*/c_p)^2$    
 
 **d.** If $c_p$, $H_s$  and $\theta$ are provided, then it will use the revised COARE3.5 wave based formulation, Eq. 13 in Sauvage et al. 2023, which accounts for the wind wave misalignment:    
 
@@ -21,7 +21,7 @@ i.e., if $\theta$ = 0, wind and waves are perfectly aligned, whereas $\theta$ = 
 
 **e.** If $c_m$ (mean wave speed) and $H_s$ are provided but $\theta$ is not provided, it will use the revised COARE3.5 wave based formulation, Eq. 12 in Sauvage et al. 2023, which uses the mean wave age:  
 
-new roughness formulation:  $z_0=H_s*A_{new}(u_\*/c_m)^{B_{new}}$  
+new roughness formulation:  $z_0=H_sA_{new}(u_\*/c_m)^{B_{new}}$  
 $A_{new} = 0.39$    
 $B_{new} = 2.6$  
 
